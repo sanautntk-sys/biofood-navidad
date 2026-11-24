@@ -958,7 +958,7 @@
         festive: true,
         floatingLogo: true,
         campaign: 'Navidad 2026',
-        whatsapp: '50688888888',
+        whatsapp: '50688237951',
         pin: '2026',
         phrases: [
           'Navidad con sabor Biofood',
@@ -1121,6 +1121,10 @@
     };
     if (state.config.phrases && (state.config.phrases[0] === '“Una Navidad con sabor artesanal”' || state.config.phrases[0] === '“Navidad con sabor Biofood”')) {
       state.config.phrases = [...DEFAULT_SEED.config.phrases];
+      Store.save(KEYS.config, state.config);
+    }
+    if (state.config.whatsapp === '50688888888') {
+      state.config.whatsapp = '50688237951';
       Store.save(KEYS.config, state.config);
     }
     if (localStorage.getItem('biofood_v1_catalog_ver') !== 'v8') {
